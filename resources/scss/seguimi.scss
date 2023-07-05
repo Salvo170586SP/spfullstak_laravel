@@ -1,0 +1,18 @@
+/* SEGUIMI */
+.dark-seguimi {
+    background: linear-gradient(to top, #232730 50%, white 0%);
+  }
+
+  .light-seguimi {
+    background: linear-gradient(to top, #eaebfc 50%, white 0%);
+    /* background: linear-gradient(0deg, #8f90ff, transparent); */
+  }
+
+  .card-follow {
+    width: 600px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: black -5px 5px 30px -10px;
+    border: solid 1px lightgray;
+    margin: 0 10px;
+  }

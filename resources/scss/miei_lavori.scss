@@ -1,0 +1,34 @@
+  /* MIEI LAVORI */
+  #miei-lavori {
+    position: relative;
+    padding: 70px 0;
+    background-size: cover;
+  }
+
+
+
+  .swiper-slide img {
+    filter: brightness(0.5);
+    position: relative;
+  }
+
+
+  .swiper-slide .text-card {
+    position: absolute;
+    top: 70%;
+    left: 50px;
+    color: white;
+    font-size: 50px;
+    filter: drop-shadow(4px 10px 5px black);
+  }
+
+
+  /* card project */
+  .card {
+    transition: 0.2s linear;
+    box-shadow: 0 0 15px -7px black;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+  }

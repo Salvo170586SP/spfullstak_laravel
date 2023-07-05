@@ -1,0 +1,67 @@
+#up {
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    z-index: 100;
+    transition: opacity 0.5s, transform 0.5s;
+    opacity: 0;
+  }
+
+  #up i {
+    background: #666666;
+    border-radius: 5px;
+    color: white;
+    width: 70px;
+    text-align: center;
+    padding: 10px;
+  }
+
+  #up.show {
+    opacity: 1;
+    transform: translateY(-80px);
+  }
+
+  .link-up,
+  .arror-up {
+    color: #231d42;
+  }
+
+   /* smartphone */
+   @media screen and (max-width: 991px) {
+
+    nav {
+      background-color: #232730;
+      transition: 0.2s linear;
+    }
+
+    #chi-sono {
+      padding: 20px 0;
+    }
+
+    .img-bl {
+      display: none;
+    }
+
+    .swiper-slide .text-card {
+      font-size: 20px;
+      left: 50px;
+    }
+
+    .icon-code {
+      transition: 0;
+      cursor: pointer;
+    }
+
+    .icon-code:hover {
+      margin-bottom: 0;
+      transition: 0;
+    }
+
+    #competenze {
+      height: auto;
+    }
+
+    .card:hover {
+      transform: translateY(0);
+    }
+  }

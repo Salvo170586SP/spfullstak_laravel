@@ -1,0 +1,76 @@
+/* light-mode header */
+.light-header {
+    background-color: snow !important;
+    box-shadow: 0 0 15px -10px black;
+  }
+
+  .light-header a {
+    color: black !important;
+  }
+
+  /* select dark light */
+  #checkbox {
+    cursor: pointer;
+    margin-left: 20px;
+  }
+
+  .text-dark {
+    color: black;
+  }
+
+  /* header */
+  nav {
+    transition: 0.1s linear;
+  }
+
+  .active-nav {
+    background-color: #232730;
+    transition: 0.1s linear;
+  }
+
+  .active-nav a {
+    color: white;
+  }
+
+  .font-size {
+    font-size: 15px;
+  }
+
+  .a-nav {
+    font-size: smaller;
+    color: white;
+  }
+
+  .a-nav:hover {
+    box-shadow: gray 0 2px 0 0;
+  }
+
+  .nav-link:focus,
+  .nav-link:hover {
+    color: grey;
+  }
+
+  #navbarNav {
+    margin-right: 250px;
+  }
+
+  .text-a,
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+
+  .navbar-toggler-icon {
+    filter: invert(1);
+  }
+
+  .navbar-toggler:focus {
+    outline: none !important;
+    box-shadow: none;
+  }
+
+
+  .navbar-toggler-icon.black-icon {
+    filter: invert(0);
+  }
