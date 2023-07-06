@@ -1,7 +1,22 @@
-<!-- CVITAE -->
-<section id="cvitae">
+@extends('guest.guest_home')
+
+@section('additional-css')
+<style>
+    .bg-cv-dark {
+        background: radial-gradient(#594c66, #000000);
+        color: white;
+    }
+
+    .bg-cv-light {
+        background: radial-gradient(#eff0ff91, #eaebfc);
+        color: black;
+    }
+</style>
+@endsection
+@section('contain')
+<section id="cvitae" class="bg-cv-dark" :class="{'bg-cv-light' : show}">
     <div class="container">
-      <div class="row">
+      <div class="row my-5">
         <div class="col-12 text-center py-5">
           <h2>Curriculum Vitae & certificati conseguiti</h2>
         </div>
@@ -55,3 +70,5 @@
       </div>
     </div>
   </section>
+
+  @endsection

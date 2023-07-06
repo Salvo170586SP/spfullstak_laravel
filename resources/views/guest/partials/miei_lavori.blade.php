@@ -64,62 +64,9 @@
           </div>
         </div>
 
-        <!-- card project -->
       </div>
-
-      <div class="row my-5 d-flex justify-content-around">
-        <div class="col-12 col-md-2 d-flex justify-content-center mt-3">
-          <div class="card">
-            <a href="https://spotify-boolean-project.netlify.app/" target="_blank" class="d-inline-block">
-              <img src="{{ asset('/images/progetti/Screenshot7.png') }}" class="card-img-top" alt="spotify" />
-              <div class="card-body d-flex justify-content-center align-items-center">
-                <h5 class="card-title text-muted">Spotify</h5>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-12 col-md-2 d-flex justify-content-center mt-3">
-          <div class="card">
-            <a href="https://playstation-boolean-project.netlify.app/" target="_blank" class="d-inline-block">
-              <img src="./images/progetti/Screenshot6.png" class="card-img-top" alt="Playstation" />
-              <div class="card-body d-flex justify-content-center align-items-center">
-                <h5 class="card-title text-muted">Playstation</h5>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-12 col-md-2 d-flex justify-content-center mt-3">
-          <div class="card">
-            <a href="https://dropbox-boolean-project.netlify.app/" target="_blank" class="d-inline-block">
-              <img src="./images/progetti/Screenshot5.png" class="card-img-top" alt="Dropbox" />
-              <div class="card-body d-flex justify-content-center align-items-center">
-                <h5 class="card-title text-muted">Dropbox</h5>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-12 col-md-2 d-flex justify-content-center mt-3">
-          <div class="card">
-            <a href="https://discord-boolean-project.netlify.app/" target="_blank" class="d-inline-block">
-              <img src="./images/progetti/Screenshot4.png" class="card-img-top" alt="Discord" />
-              <div class="card-body d-flex justify-content-center align-items-center">
-                <h5 class="card-title text-muted">Discord</h5>
-              </div>
-            </a>
-
-          </div>
-        </div>
-        <div class="col-12 col-md-2 d-flex justify-content-center mt-3">
-          <div class="card">
-            <a href="https://whatsappweb-clone-res.netlify.app/" target="_blank" class="d-inline-block">
-              <img src="images/progetti/Screenshot3.png" class="card-img-top" alt="Discord" />
-              <div class="card-body d-flex justify-content-center align-items-center">
-                <h5 class="card-title text-muted">WhatsApp Web</h5>
-              </div>
-            </a>
-
-          </div>
-        </div>
+      <div class="col-12 text-center">
+          <a class="btn btn-outline-secondary fs-4 my-5" href="{{ route('guest.pages.projects.index') }}">Guarda tutti i miei lavori <i class="fa fa-arrow-right ms-3"></i></a>
       </div>
     </div>
   </section>

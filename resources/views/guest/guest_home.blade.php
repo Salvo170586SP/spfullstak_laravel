@@ -14,35 +14,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
     @vite(['resources/scss/app.scss','resources/js/scrollnav.js','resources/js/scrolling.js','resources/js/imgprev.js','resources/js/arrowTop.js','resources/js/app.js'])
-
-    <style>
-        .jumb_image {
-            background-image: url("/images/photo-1635830625698-3b9bd74671ca.avif");
-        }
-
-        .bio_image {
-            background-image: url("/images/IMG_20210314_104826.jpg");
-        }
-
-    </style>
+    @yield('additional-css')
 </head>
 <body x-data="{show: false}">
     <div id="home-page">
         @include('guest.partials.navbar')
         <main>
-            @include('guest.partials.jumbotron')
-            @include('guest.partials.biograpy')
-            @include('guest.partials.competenze')
-            @include('guest.partials.miei_lavori')
-            @include('guest.partials.cvitae')
-            @include('guest.partials.seguimi')
-            @include('guest.partials.footer')
-            @include('guest.partials.up-arrow')
+            @yield('contain')
         </main>
     </div>
-    
-{{--     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
- --}}    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    @include('guest.partials.footer')
+@include('guest.partials.up-arrow')
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper(".swiper", {
             // Optional parameters

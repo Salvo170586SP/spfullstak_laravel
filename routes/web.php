@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
+use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('guest.guest_home');
-});
+}); */
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,3 +32,15 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+/* GUEST */
+Route::get('/', [HomeController::class, 'index'])->name('guest.home');
+Route::get('/projects',function(){
+    return view('guest.pages.projects.index');
+})->name('guest.pages.projects.index');
+
+
+Route::get('/cvitae', function(){
+    return view('guest.pages.cvitae.cvitae');
+})->name('guest.pages.cvitae.cvitae');
+ 
