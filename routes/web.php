@@ -35,12 +35,17 @@ require __DIR__.'/auth.php';
 
 /* GUEST */
 Route::get('/', [HomeController::class, 'index'])->name('guest.home');
+
 Route::get('/projects',function(){
     return view('guest.pages.projects.index');
 })->name('guest.pages.projects.index');
 
 
 Route::get('/cvitae', function(){
-    return view('guest.pages.cvitae.cvitae');
-})->name('guest.pages.cvitae.cvitae');
+    return view('guest.pages.cvitae.index');
+})->name('guest.pages.cvitae.index');
+
+Route::get('/bio', function(){
+    return view('guest.pages.bio.index');
+})->name('guest.pages.bio.index');
  

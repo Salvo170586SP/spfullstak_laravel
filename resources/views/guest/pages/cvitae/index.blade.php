@@ -52,16 +52,16 @@
         </div>
         <div class="col-12 d-none col-md-3 d-md-block d-flex align-items-center justify-content-center py-2">
           <img src="https://i.postimg.cc/Bnf1KNQ0/Attestato-Boolean-Pitanza-Salvatore-page-0001.jpg" alt="attestato"
-            id="cv-prev" class="img-fluid border img-cv" width="250" />
+            id="cv-prev" class="img-fluid  border img-cv" width="250" />
         </div>
         <div class="col-12 d-none col-md-3 d-md-block d-flex align-items-center justify-content-center py-2">
-          <img src="images/Pitanza_Salvatore_cv_2023.png" alt="cvitae" id="cv-next" class="img-fluid border img-cv"
+          <img src="images/Pitanza_Salvatore_cv_2023.png" alt="cvitae" id="cv-next" class="img-fluid  border img-cv"
             width="250" />
         </div>
 
         <div class="col-12 d-block col-md-3 d-md-none d-flex align-items-center justify-content-center py-2">
           <img src="https://i.postimg.cc/Bnf1KNQ0/Attestato-Boolean-Pitanza-Salvatore-page-0001.jpg" alt="attestato"
-            class="img-fluid border img-cv" width="250" />
+            class="img-fluid border  img-cv" width="250" />
         </div>
         <div class="col-12 d-block col-md-3 d-md-none d-flex align-items-center justify-content-center py-2">
           <img src="images/Pitanza_Salvatore_cv_2023.png" alt="cvitae" class="img-fluid border img-cv"

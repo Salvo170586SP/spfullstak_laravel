@@ -12,13 +12,13 @@
                     <a class="nav-link a-nav" href="{{ url('/') }}">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link a-nav" href="#biograpy">CHI SONO</a>
+                    <a class="nav-link a-nav" href="{{ route('guest.pages.bio.index') }}">CHI SONO</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link a-nav" href="{{ route('guest.pages.projects.index') }}">PROGETTI</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link a-nav" href="{{ route('guest.pages.cvitae.cvitae') }}">LE MIE COMPETENZE</a>
+                    <a class="nav-link a-nav" href="{{ route('guest.pages.cvitae.index') }}">LE MIE COMPETENZE</a>
                 </li>
 
                 @if(url()->current() == url('/'))

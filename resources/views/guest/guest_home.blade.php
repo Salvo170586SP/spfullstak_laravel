@@ -22,8 +22,8 @@
         <main>
             @yield('contain')
         </main>
+        @include('guest.partials.footer')
     </div>
-    @include('guest.partials.footer')
 @include('guest.partials.up-arrow')
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>

@@ -12,7 +12,7 @@
             <br /><br />
             <br />
           </p>
-          <a class="text-light lh-lg" href="#cvitae"><i
+          <a class="text-light lh-lg" href="#competenze"><i
               class="fa-solid fa-arrow-down fa-3x arrow-icon bounce me-3"></i></a>
           <p class="lh-lg">
             Scopri le mie competenze nel mondo dello sviluppo web
