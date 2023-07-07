@@ -41,6 +41,7 @@ require __DIR__.'/auth.php';
 Route::middleware('auth')->prefix('dashboard')->name('admin.')->group(function () {
     #GET|HEAD  dashboard/biograpies ......admin.biograpies.index › BiograpyController@index
     Route::resource('/biograpies', BiograpyController::class);
+    Route::resource('/projects', ProjectController::class);
     
 });
 
@@ -49,7 +50,8 @@ Route::middleware('auth')->prefix('dashboard')->name('admin.')->group(function (
 Route::get('/', [HomeController::class, 'index'])->name('guest.home');
 
 Route::get('/projects',function(){
-    return view('guest.pages.projects.index');
+    $projects = Project::all();
+    return view('guest.pages.projects.index', compact('projects'));
 })->name('guest.pages.projects.index');
 
 
