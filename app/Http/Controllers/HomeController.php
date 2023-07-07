@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Biograpy;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,7 +12,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('guest.home');
+        $biograpies = Biograpy::all(); 
+        return view('guest.home', compact('biograpies'));
     }
 
     /**

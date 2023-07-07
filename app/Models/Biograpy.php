@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Biograpy extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['description'];
 }

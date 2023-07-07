@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Biograpy;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BiograpyController extends Controller
 {
@@ -12,7 +13,8 @@ class BiograpyController extends Controller
      */
     public function index()
     {
-        return view('admin.biograpies.index');
+        $biograpies = Biograpy::all();
+        return view('admin.biograpies.index', compact('biograpies'));
     }
 
     /**
@@ -28,7 +30,12 @@ class BiograpyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $biograpy = new Biograpy();
+        $biograpy->description = $request->description;
+        $biograpy->user_id =  Auth::id();
+        $biograpy->save();
+
+        return back();
     }
 
     /**
@@ -52,7 +59,11 @@ class BiograpyController extends Controller
      */
     public function update(Request $request, Biograpy $biograpy)
     {
-        //
+         $biograpy->update([
+            'description' => $request->description,
+        ]);
+
+        return redirect()->route('admin.biograpies.index');
     }
 
     /**
