@@ -9,16 +9,16 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav font-size">
                 <li class="nav-item">
-                    <a class="nav-link a-nav" href="{{ url('/') }}">HOME</a>
+                    <a class="nav-link a-nav @if(url()->current() == url('/'))  a-nav-current  @endif" href="{{ url('/') }}">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link a-nav" href="{{ route('guest.pages.bio.index') }}">CHI SONO</a>
+                    <a class="nav-link a-nav @if(url()->current() == url('/bio'))  a-nav-current  @endif" href="{{ route('guest.pages.bio.index') }}">CHI SONO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link a-nav" href="{{ route('guest.pages.projects.index') }}">PROGETTI</a>
+                    <a class="nav-link a-nav @if(url()->current() == url('/projects'))  a-nav-current  @endif"  href="{{ route('guest.pages.projects.index') }}">PROGETTI</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link a-nav" href="{{ route('guest.pages.cvitae.index') }}">LE MIE COMPETENZE</a>
+                    <a class="nav-link a-nav @if(url()->current() == url('/cvitae'))  a-nav-current  @endif"  href="{{ route('guest.pages.cvitae.index') }}">LE MIE COMPETENZE</a>
                 </li>
 
                 @if(url()->current() == url('/'))

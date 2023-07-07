@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BiograpyController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
@@ -32,6 +33,17 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+/* ADMIN */
+Route::middleware('auth')->prefix('dashboard')->name('admin.')->group(function () {
+    #GET|HEAD  dashboard/biograpies ......admin.biograpies.index › BiograpyController@index
+    Route::resource('/biograpies', BiograpyController::class);
+    
+});
+
+
+
 
 /* GUEST */
 Route::get('/', [HomeController::class, 'index'])->name('guest.home');
