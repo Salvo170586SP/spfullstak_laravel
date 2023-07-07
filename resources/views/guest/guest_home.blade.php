@@ -13,7 +13,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
-    @vite(['resources/scss/app.scss','resources/js/scrollnav.js','resources/js/scrolling.js','resources/js/imgprev.js','resources/js/arrowTop.js','resources/js/app.js'])
+    @vite(['resources/scss/app.scss','resources/js/scrollnav.js','resources/js/imgprev.js','resources/js/arrowTop.js','resources/js/app.js'])
     @yield('additional-css')
 </head>
 <body x-data="{show: false}">
@@ -24,13 +24,14 @@
         </main>
         @include('guest.partials.footer')
     </div>
-@include('guest.partials.up-arrow')
+    @include('guest.partials.up-arrow')
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper(".swiper", {
             // Optional parameters
             loop: true,
-
+            
             // If we need pagination
             pagination: {
                 el: ".swiper-pagination"
@@ -40,15 +41,15 @@
             navigation: {
                 nextEl: ".swiper-button-next"
                 , prevEl: ".swiper-button-prev"
-            , },
+                , },
 
-            // And if we need scrollbar
-            scrollbar: {
-                el: ".swiper-scrollbar"
-            , }
+                // And if we need scrollbar
+                scrollbar: {
+                    el: ".swiper-scrollbar"
+                    , }
         , });
-
-    </script>
+        
+        </script>
+{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script> --}}
 </body>
-
 </html>

@@ -4,7 +4,7 @@
 }
 
 .light-header {
-  background-color: snow !important;
+  background-color: rgb(238, 238, 255) !important;
   box-shadow: 0 0 15px -10px black;
 }
 
@@ -17,7 +17,7 @@
   cursor: pointer;
   margin-left: 20px;
 }
-
+S
 .text-dark {
   color: black;
 }
@@ -46,7 +46,7 @@ nav {
 }
 
 .a-nav:hover {
-  box-shadow: gray 0 2px 0 0;
+ border-bottom: 2px solid gray;
 }
 
 .nav-link:focus,
@@ -55,7 +55,7 @@ nav {
 }
 
 .a-nav-current{
-  box-shadow: gray 0 2px 0 0;
+  border-bottom: 2px solid gray;
   color: grey;
 }
 

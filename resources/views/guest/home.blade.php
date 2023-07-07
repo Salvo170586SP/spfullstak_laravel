@@ -2,7 +2,7 @@
 @section('additional-css')
 <style>
     .jumb_image {
-        background-image: url("/images/photo-1635830625698-3b9bd74671ca.avif");
+        background-image: url("/images/mohammad-rahmani-8qEB0fTe9Vw-unsplash.jpg");
     }
 
     .bio_image {

@@ -2,8 +2,8 @@
     <nav id="primary-header" class="navbar p-2 navbar-expand-lg d-flex" :class="{ 'light-header' : show}">
         <img width="50" src="{{ asset('images/icon/logo2.png') }}" alt="logo" />
         <h6 class="text-light" :class="{ 'text-dark' : show}">SPFULLSTAK.it</h6>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon" :class="{'black-icon' : show}"></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
@@ -15,10 +15,10 @@
                     <a class="nav-link a-nav @if(url()->current() == url('/bio'))  a-nav-current  @endif" href="{{ route('guest.pages.bio.index') }}">CHI SONO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link a-nav @if(url()->current() == url('/projects'))  a-nav-current  @endif"  href="{{ route('guest.pages.projects.index') }}">PROGETTI</a>
+                    <a class="nav-link a-nav @if(url()->current() == url('/projects'))  a-nav-current  @endif" href="{{ route('guest.pages.projects.index') }}">PROGETTI</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link a-nav @if(url()->current() == url('/cvitae'))  a-nav-current  @endif"  href="{{ route('guest.pages.cvitae.index') }}">LE MIE COMPETENZE</a>
+                    <a class="nav-link a-nav @if(url()->current() == url('/cvitae'))  a-nav-current  @endif" href="{{ route('guest.pages.cvitae.index') }}">LE MIE COMPETENZE</a>
                 </li>
 
                 @if(url()->current() == url('/'))
@@ -30,7 +30,7 @@
                 <li class="nav-item d-flex align-items-center">
                     <i @click="show = !show" id="checkbox" class="fa fa-moon text-light nav-link a-nav" :class="{'fa-sun text-dark' : show}"></i>
                 </li>
-                <li class="nav-item d-flex align-items-center ms-5">
+              {{--   <li class="nav-item d-flex align-items-center ms-5">
                     @if (Route::has('login'))
                     <div>
                         @auth
@@ -45,7 +45,7 @@
                     </div>
                     @endif
 
-                </li>
+                </li> --}}
             </ul>
         </div>
 
