@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('biograpies', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->text('description');
             $table->timestamps();
         });
     }
