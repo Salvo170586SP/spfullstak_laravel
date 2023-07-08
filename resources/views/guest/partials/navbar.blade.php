@@ -20,13 +20,19 @@
                 <li class="nav-item">
                     <a class="nav-link a-nav @if(url()->current() == url('/cvitae'))  a-nav-current  @endif" href="{{ route('guest.pages.cvitae.index') }}">LE MIE COMPETENZE</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link a-nav" href="{{ url('/gallery') }}">GALLERY</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link a-nav" href="{{ url('/blog') }}">BLOG</a>
+                </li>
 
                 @if(url()->current() == url('/'))
                 <li class="nav-item">
                     <a class="nav-link a-nav" href="#seguimi">SEGUIMI</a>
                 </li>
                 @endif
-
+                
                 <li class="nav-item d-flex align-items-center">
                     <i @click="show = !show" id="checkbox" class="fa fa-moon text-light nav-link a-nav" :class="{'fa-sun text-dark' : show}"></i>
                 </li>

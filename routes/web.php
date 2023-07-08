@@ -63,4 +63,12 @@ Route::get('/bio', function(){
     $biograpies = Biograpy::all();
     return view('guest.pages.bio.index', compact('biograpies'));
 })->name('guest.pages.bio.index');
+
+Route::get('/gallery', function(){
+    return view('guest.pages.gallery.index');
+})->name('guest.pages.gallery.index');
+
+Route::get('/blog', function(){
+    return view('guest.pages.blog.index');
+})->name('guest.pages.blog.index');
  
