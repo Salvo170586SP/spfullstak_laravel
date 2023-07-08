@@ -42,4 +42,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
+    public function biograpy()
+    {
+        return $this->hasOne(Biograpy::class);
+    }
 }

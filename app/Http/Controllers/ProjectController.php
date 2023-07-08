@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -44,8 +45,7 @@ class ProjectController extends Controller
 
         $project->save();
 
-
-        return redirect()->route('admin.projects.index');
+        return redirect()->route('admin.projects.index')->with('message', 'Contenuto aggiunto');
     }
 
 
@@ -55,7 +55,12 @@ class ProjectController extends Controller
     public function edit(string $id)
     {
         $project = Project::findOrFail($id);
-        return view('admin.projects.edit', compact('project'));
+
+        if ($project->user_id == Auth::id()) {
+            return view('admin.projects.edit', compact('project'));
+        } else {
+            return abort(404);
+        }
     }
 
     /**
@@ -65,22 +70,25 @@ class ProjectController extends Controller
     {
         $project = Project::findOrFail($id);
 
-        //UPDATE DELL'IMMAGINE MA SE NON CARICO UN ALTRA IMMAGINE ELIMINA L'IMMAGINE ESISTENTE E METTE IL PLACEHOLDER
-        if ($request->hasfile('img_url')) {
-            Storage::delete($project->img_url);
+        try {
 
-            $url_file = Storage::put('/project_imgs', $request->file('img_url'));
-            $project->img_url = $url_file;
-        } /* else {
-            if ($project->img_url) {
-                $project->img_url = null;
+            if ($project->user_id == Auth::id()) {
+                //UPDATE DELL'IMMAGINE MA SE NON CARICO UN ALTRA IMMAGINE ELIMINA L'IMMAGINE ESISTENTE E METTE IL PLACEHOLDER
+                if ($request->hasfile('img_url')) {
+                    Storage::delete($project->img_url);
+
+                    $url_file = Storage::put('/project_imgs', $request->file('img_url'));
+                    $project->img_url = $url_file;
+                }
+            } else {
+                return abort(404);
             }
-        } */
 
-
-        $project->update($request->all());
-
-        return redirect()->route('admin.projects.index');
+            $project->update($request->all());
+            return redirect()->route('admin.projects.index')->with('message', 'Contenuto aggiornato');
+        } catch (Exception $e) {
+            return redirect()->route('admin.projects.index')->with('message', 'Qualcosa è andato storto');
+        }
     }
 
     /**
@@ -96,6 +104,6 @@ class ProjectController extends Controller
 
         $project->delete();
 
-        return back();
+        return back()->with('message', 'Contenuto eliminato');
     }
 }

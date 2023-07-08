@@ -6,6 +6,9 @@
                 <h3 class="text-2xl font-bold text-white">Biografia</h3>
             </div>
             <div class="col">
+                @include('admin.partials.alertMessage')
+            </div>
+            <div class="col">
                 <div class="max-w-xxl dark:bg-gray-600 dark:text-white py-4 px-8 bg-white shadow-lg rounded-lg my-20" style="height: 400px; overflow: auto">
                     <span class="text-1xl font-bold dark:text-white text-black">Modifiche Applicate</span>
                     <hr>

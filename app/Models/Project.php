@@ -10,4 +10,9 @@ class Project extends Model
     use HasFactory;
 
     protected $fillable = ['title','url','img-url'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

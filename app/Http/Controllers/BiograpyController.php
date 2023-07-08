@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Biograpy;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -30,12 +31,14 @@ class BiograpyController extends Controller
      */
     public function store(Request $request)
     {
+
         $biograpy = new Biograpy();
         $biograpy->description = $request->description;
         $biograpy->user_id =  Auth::id();
         $biograpy->save();
 
-        return back();
+        return back()->with('message', 'Contenuto aggiunto');
+        
     }
 
     /**
@@ -59,11 +62,21 @@ class BiograpyController extends Controller
      */
     public function update(Request $request, Biograpy $biograpy)
     {
-         $biograpy->update([
-            'description' => $request->description,
-        ]);
 
-        return redirect()->route('admin.biograpies.index');
+        try {
+
+            if ($biograpy->user_id == Auth::id()) {
+                $biograpy->update([
+                    'description' => $request->description,
+                ]);
+                return redirect()->route('admin.biograpies.index')->with('message', 'Contenuto aggiornato');
+            } else {
+                return abort(404);
+            }
+
+        } catch (Exception $e) {
+            return redirect()->route('admin.biograpies.index')->with('message', 'Qualcosa è andato storto');
+        }
     }
 
     /**
