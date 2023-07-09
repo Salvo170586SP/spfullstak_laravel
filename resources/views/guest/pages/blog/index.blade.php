@@ -3,7 +3,7 @@
 @section('additional-css')
 <style>
     #blog {
-        height: 100vh;
+        min-height: 100vh;
         padding-top: 100px;
     }
 
@@ -19,14 +19,16 @@
 <section id="blog" class="bg-blog-dark">
     <div class="container">
         <div class="row">
-            <div class="col">
-                <h1 class="z-i">
-                    Blog
+            <div class="col-12">
+                <h1 class="z-i pb-5">
+                    Gallery
                 </h1>
-                <div class="d-flex flex-column justify-content-center align-items-center z-i">
-                    <h1 class="z-i text-light mb-5">Coming soon...</h1>
-                    <img width="900" class="rounded-5 border z-i" src="{{ asset('images/mark-konig-Uu5fnOkFAdA-unsplash.jpg') }}" alt="">
-                </div>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <img class="rounded-5 border z-i w-75" src="{{ asset('images/mark-konig-Uu5fnOkFAdA-unsplash.jpg') }}" alt="Coming soon">
+            </div>
+            <div class="col-12 text-center my-5">
+                <h1 class="z-i text-light">Coming soon...</h1>
             </div>
         </div>
     </div>
