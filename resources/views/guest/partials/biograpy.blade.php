@@ -1,5 +1,5 @@
 <!-- CHI SONO -->
-<section id="biograpy" class="bio_image" style="background-image: url('/images/IMG_20210314_104826.jpg');"  >
+<section id="biograpy" class="bio_image" style="background-image: url('./images/IMG_20210314_104826.jpg');"  >
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12 z-i">

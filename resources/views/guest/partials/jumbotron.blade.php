@@ -1,4 +1,4 @@
-<section id="jumbotron" class="jumb_image" style="background-image: url('/images/mohammad-rahmani-8qEB0fTe9Vw-unsplash.jpg')" >
+<section id="jumbotron" class="jumb_image" style="background-image: url('./images/mohammad-rahmani-8qEB0fTe9Vw-unsplash.jpg')" >
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12 text-light z-i">
