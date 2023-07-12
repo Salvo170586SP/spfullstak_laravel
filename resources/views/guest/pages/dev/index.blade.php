@@ -2,12 +2,12 @@
 
 @section('additional-css')
 <style>
-    #gallery {
+    #dev {
         min-height: 100vh;
         padding-top: 100px;
     }
 
-    .bg-gallery-dark {
+    .bg-dev-dark {
         background: radial-gradient(#594c66, #000000);
         color: white;
     }
@@ -15,12 +15,12 @@
 </style>
 @endsection
 @section('contain')
-<section id="gallery" class="bg-gallery-dark">
+<section id="dev" class="bg-dev-dark">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <h1 class="z-i pb-5">
-                    Gallery
+                    Development
                 </h1>
             </div>
             <div class="col-12 d-flex justify-content-center">

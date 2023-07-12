@@ -2,13 +2,13 @@
 
 @section('additional-css')
 <style>
-    #blog {
+    #naturando {
         min-height: 100vh;
         padding-top: 100px;
     }
 
 
-    .bg-blog-dark {
+    .bg-naturando-dark {
         background: radial-gradient(#594c66, #000000);
         color: white;
     }
@@ -16,12 +16,12 @@
 </style>
 @endsection
 @section('contain')
-<section id="blog" class="bg-blog-dark">
+<section id="naturando" class="bg-naturando-dark">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <h1 class="z-i pb-5">
-                    Gallery
+                    Naturando
                 </h1>
             </div>
             <div class="col-12 d-flex justify-content-center">
