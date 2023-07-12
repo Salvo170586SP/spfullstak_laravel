@@ -21,10 +21,10 @@
                     <a class="nav-link a-nav @if(url()->current() == url('/cvitae'))  a-nav-current  @endif" href="{{ route('guest.pages.cvitae.index') }}">LE MIE COMPETENZE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link a-nav" href="{{ url('/gallery') }}">GALLERY</a>
+                    <a class="nav-link a-nav" href="{{ url('/naturando') }}">NATURANDO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link a-nav" href="{{ url('/blog') }}">BLOG</a>
+                    <a class="nav-link a-nav" href="{{ url('/dev') }}">DEV</a>
                 </li>
 
                 @if(url()->current() == url('/'))
