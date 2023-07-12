@@ -3,7 +3,7 @@
 @section('additional-css')
 <style>
     #bio {
-        min-height: 90vh:
+        min-height: 90vh;
     }
 
     .bg-bio-dark {
