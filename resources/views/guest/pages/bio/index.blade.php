@@ -2,7 +2,9 @@
 
 @section('additional-css')
 <style>
-    #bio {}
+    #bio {
+        min-height: 90vh:
+    }
 
     .bg-bio-dark {
         background: radial-gradient(#594c66, #000000);
