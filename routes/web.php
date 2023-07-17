@@ -39,10 +39,8 @@ require __DIR__.'/auth.php';
 
 /* ADMIN */
 Route::middleware('auth')->prefix('dashboard')->name('admin.')->group(function () {
-    #GET|HEAD  dashboard/biograpies ......admin.biograpies.index › BiograpyController@index
     Route::resource('/biograpies', BiograpyController::class);
     Route::resource('/projects', ProjectController::class);
-    
 });
 
 

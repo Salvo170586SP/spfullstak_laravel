@@ -16,7 +16,7 @@
     @yield('additional-css')
     @vite(['resources/scss/app.scss','resources/js/scrollnav.js','resources/js/imgprev.js','resources/js/arrowTop.js','resources/js/app.js'])
 </head>
-<body x-data="{show: false}">
+<body {{-- x-data="{show: false}" --}}>
     <div id="home-page">
         @include('guest.partials.navbar')
         <main>

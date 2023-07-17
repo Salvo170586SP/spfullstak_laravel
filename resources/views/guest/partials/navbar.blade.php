@@ -33,9 +33,9 @@
                 </li>
                 @endif
                 
-                <li class="nav-item d-flex align-items-center">
+              {{--   <li class="nav-item d-flex align-items-center">
                     <i @click="show = !show" id="checkbox" class="fa fa-moon text-light nav-link a-nav" :class="{'fa-sun text-dark' : show}"></i>
-                </li>
+                </li> --}}
               {{--   <li class="nav-item d-flex align-items-center ms-5">
                     @if (Route::has('login'))
                     <div>

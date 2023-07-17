@@ -8,26 +8,30 @@
                 @include('admin.partials.alertMessage')
             </div>
 
-            
-            <div class="col ">
+
+            <div class="col mx-auto lg:w-5/6">
                 <form action="{{ route('admin.projects.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <button class="font-bold text-white rounded my-5 p-2 bg-gray-500">Aggiungi <i class="fa-solid fa-plus ms-1"></i></button>
 
                     <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Titolo</label>
-                    <input id="title" required type="text" name="title" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                    <input id="title" required type="text" name="title" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
 
                     <label for="url" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400 mt-3">URL</label>
-                    <input id="url" type="text" name="url" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                    <input id="url" type="text" name="url" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
 
                     <label for="img_url" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400 mt-3">Immagine</label>
-                    <input id="img_url" type="file" name="img_url" class=" p-2.5  text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                    <input id="img_url" type="file" name="img_url" class=" p-2.5  text-sm text-gray-900 bg-gray-50 rounded border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
 
                 </form>
             </div>
 
-            <div class="col block md:hidden">
-                <div class="max-w-xxl dark:bg-gray-600 dark:text-white py-4 px-8 bg-white shadow-lg rounded-lg my-20" style="height: 400px; overflow: auto">
+            <div class="col block md:hidden my-10 mx-auto w-full">
+                <form action="{{ route('admin.projects.index') }}" method="get" class="flex items-center">
+                    <input class="block mr-2  text-sm text-gray-900 bg-gray-50 rounded border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" name="search">
+                    <button class="font-bold text-white rounded my-5 p-2 bg-gray-500">Cerca</button>
+                </form>
+                <div class="max-w-xxl dark:bg-gray-600 dark:text-white py-4 px-8 bg-white shadow-lg rounded-lg" style=" overflow: auto">
                     <div class="py-5">
                         @foreach($projects as $proj)
                         <div class="flex justify-between items-center py-3">
@@ -67,6 +71,10 @@
                 <div class="overflow-x-auto">
                     <div class="min-w-screen  my-9 flex items-center justify-center  font-sans overflow-hidden">
                         <div class="w-full lg:w-5/6">
+                            <form action="{{ route('admin.projects.index') }}" method="get" class="flex items-center">
+                                <input class="block mr-2  text-sm text-gray-900 bg-gray-50 rounded border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" name="search">
+                                <button class="font-bold text-white rounded my-5 p-2 bg-gray-500">Cerca</button>
+                            </form>
                             <div class="shadow-lg rounded my-6">
                                 <table class="min-w-max w-full dark:bg-gray-700 dark:text-white-800 rounded-md overflow-hidden  table-auto">
                                     <thead>
@@ -78,26 +86,26 @@
                                         </tr>
                                     </thead>
                                     <tbody class="text-white text-sm font-light">
-                                        @foreach($projects as $proj)
+                                        @foreach($projects as $project)
                                         <tr class="border-b border-gray-600 hover:bg-gray-600">
                                             <td class="py-3 px-6 text-left whitespace-nowrap">
-                                                <img class="rounded-md" width="90" src="{{ asset('storage/'. $proj->img_url) }}" alt="{{$proj->title }}">
+                                                <img class="rounded-md" width="90" src="{{ asset('storage/'. $project->img_url) }}" alt="{{$project->title }}">
                                             </td>
                                             <td class="py-3 px-6 text-left">
-                                                {{ $proj->title }}
+                                                {{ $project->title }}
                                             </td>
                                             <td class="py-3 px-6 text-center">
-                                                {{ $proj->url }}
+                                                {{ $project->url }}
                                             </td>
                                             <td class="py-3 px-6 text-center">
                                                 <div class="flex item-center justify-center">
                                                     <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                                        <a href="{{ route('admin.projects.edit', $proj->id) }}">
+                                                        <a href="{{ route('admin.projects.edit', $project->id) }}">
                                                             <i class="fa-solid fa-pencil"></i>
                                                         </a>
                                                     </div>
                                                     <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                                        <form class="delete-form" action="{{ route('admin.projects.destroy', $proj->id) }}" method="post" data-title="{{$proj->title}}">
+                                                        <form class="delete-form" action="{{ route('admin.projects.destroy', $project->id) }}" method="post" data-title="{{$project->title}}">
                                                             @csrf
                                                             @method('delete')
 

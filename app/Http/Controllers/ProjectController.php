@@ -13,9 +13,11 @@ class ProjectController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $projects = Project::all();
+
+        $search = $request->input('search');
+        $projects = Project::where('title', 'like', "%$search%")->get();
 
         return view('admin.projects.index', compact('projects'));
     }
@@ -26,6 +28,10 @@ class ProjectController extends Controller
     public function create()
     {
         /* return view('admin.projects.create'); */
+    }
+
+    public function show($id)
+    {
     }
 
     /**
@@ -106,4 +112,14 @@ class ProjectController extends Controller
 
         return back()->with('message', 'Contenuto eliminato');
     }
+
+  /*   public function search(Request $request)
+    {
+        $title = $request->input('title');
+        $projectTitle = Project::where('title', $title)->first();
+
+        dd($projectTitle);
+
+        return view('admin.projects.index', compact('projectTitle'));
+    } */
 }
