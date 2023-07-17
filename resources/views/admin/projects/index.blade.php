@@ -93,7 +93,7 @@
                                                 <form action="{{ route('admin.projects.updatePosition', $proj->id) }}" method="post" class=" flex items-center">
                                                     @csrf
 
-                                                    <input value="{{ old('position',  $proj->position) }}" name="position" type="number" min="1" max="{{ count($projects) }}" style="width: 10%" class="block ml-2 me-2 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                                    <input value="{{ old('position',  $proj->position) }}" name="position" type="number" min="1" max="{{ count($projects) }}" style="width: 20%" class="block mx-2 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                                     <button class="font-bold text-white rounded my-5 p-2 bg-gray-500">Salva posizione</button>
                                                 </form>
                                             </td>
