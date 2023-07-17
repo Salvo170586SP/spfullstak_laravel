@@ -17,7 +17,8 @@ class ProjectController extends Controller
     {
 
         $search = $request->input('search');
-        $projects = Project::where('title', 'like', "%$search%")->get();
+        $projects = Project::where('title', 'like', "%$search%")->orderBy('position', 'ASC')->get();
+
 
         return view('admin.projects.index', compact('projects'));
     }
@@ -113,13 +114,33 @@ class ProjectController extends Controller
         return back()->with('message', 'Contenuto eliminato');
     }
 
-  /*   public function search(Request $request)
+    public function updatePosition(Request $request, Project $project)
     {
-        $title = $request->input('title');
-        $projectTitle = Project::where('title', $title)->first();
+        //FUNZIONANTE
+        // Controlla se il nuovo numero di posizione è diverso da quello attuale
+        if ($project->position != $request->position) {
+            // Calcola la differenza di posizione
+            $differenzaPosizione = $request->position - $project->position;
 
-        dd($projectTitle);
+            // Se la nuova posizione è maggiore, sposta gli altri elementi verso l'alto
+            if ($differenzaPosizione > 0) {
+                Project::where('user_id', '=', Auth::id())->where('position', '>', $project->position)
+                    ->where('position', '<=', $request->position)
+                    ->decrement('position');
+            }
 
-        return view('admin.projects.index', compact('projectTitle'));
-    } */
+            // Se la nuova posizione è minore, sposta gli altri elementi verso il basso
+            elseif ($differenzaPosizione < 0) {
+                Project::where('user_id', '=', Auth::id())->where('position', '>=', $request->position)
+                    ->where('position', '<', $project->position)
+                    ->increment('position');
+            }
+
+            // Aggiorna la posizione dell'elemento corrente
+            $project->position = $request->position;
+            $project->save();
+        }
+
+        return redirect()->back()->with('message', "$project->name_category spostato nella posizione $project->position");
+    }
 }

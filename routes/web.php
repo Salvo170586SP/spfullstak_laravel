@@ -34,39 +34,39 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 
 /* ADMIN */
 Route::middleware('auth')->prefix('dashboard')->name('admin.')->group(function () {
     Route::resource('/biograpies', BiograpyController::class);
     Route::resource('/projects', ProjectController::class);
+    Route::post('/categories/updatePosition/{project}',  [ProjectController::class, 'updatePosition'])->name('projects.updatePosition');
 });
 
 
 /* GUEST */
 Route::get('/', [HomeController::class, 'index'])->name('guest.home');
 
-Route::get('/projects',function(){
-    $projects = Project::all();
+Route::get('/projects', function () {
+    $projects = Project::orderBy('position', 'ASC')->get();
     return view('guest.pages.projects.index', compact('projects'));
 })->name('guest.pages.projects.index');
 
 
-Route::get('/cvitae', function(){
+Route::get('/cvitae', function () {
     return view('guest.pages.cvitae.index');
 })->name('guest.pages.cvitae.index');
 
-Route::get('/bio', function(){
+Route::get('/bio', function () {
     $biograpies = Biograpy::all();
     return view('guest.pages.bio.index', compact('biograpies'));
 })->name('guest.pages.bio.index');
 
-Route::get('/naturando', function(){
+Route::get('/naturando', function () {
     return view('guest.pages.naturando.index');
 })->name('guest.pages.naturando.index');
 
-Route::get('/dev', function(){
+Route::get('/dev', function () {
     return view('guest.pages.dev.index');
 })->name('guest.pages.dev.index');
- 

@@ -79,33 +79,42 @@
                                 <table class="min-w-max w-full dark:bg-gray-700 dark:text-white-800 rounded-md overflow-hidden  table-auto">
                                     <thead>
                                         <tr class="bg-gray-200 dark:bg-gray-800 text-white uppercase text-sm leading-normal">
-                                            <th class="py-3 px-6 text-left">image</th>
+                                            <th class="py-3 px-6 text-left">Posizione</th>
+                                            <th class="py-3 px-6 text-left">Image</th>
                                             <th class="py-3 px-6 text-left">Titolo</th>
                                             <th class="py-3 px-6 text-center">Url</th>
                                             <th class="py-3 px-6 text-center">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody class="text-white text-sm font-light">
-                                        @foreach($projects as $project)
+                                        @foreach($projects as $proj)
                                         <tr class="border-b border-gray-600 hover:bg-gray-600">
+                                            <td class="w-50">
+                                                <form action="{{ route('admin.projects.updatePosition', $proj->id) }}" method="post" class=" flex items-center">
+                                                    @csrf
+
+                                                    <input value="{{ old('position',  $proj->position) }}" name="position" type="number" min="1" max="{{ count($projects) }}" style="width: 10%" class="block ml-2 me-2 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                                    <button class="font-bold text-white rounded my-5 p-2 bg-gray-500">Salva posizione</button>
+                                                </form>
+                                            </td>
                                             <td class="py-3 px-6 text-left whitespace-nowrap">
-                                                <img class="rounded-md" width="90" src="{{ asset('storage/'. $project->img_url) }}" alt="{{$project->title }}">
+                                                <img class="rounded-md" width="90" src="{{ asset('storage/'. $proj->img_url) }}" alt="{{$proj->title }}">
                                             </td>
                                             <td class="py-3 px-6 text-left">
-                                                {{ $project->title }}
+                                                {{ $proj->title }}
                                             </td>
                                             <td class="py-3 px-6 text-center">
-                                                {{ $project->url }}
+                                                {{ $proj->url }}
                                             </td>
                                             <td class="py-3 px-6 text-center">
                                                 <div class="flex item-center justify-center">
                                                     <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                                        <a href="{{ route('admin.projects.edit', $project->id) }}">
+                                                        <a href="{{ route('admin.projects.edit', $proj->id) }}">
                                                             <i class="fa-solid fa-pencil"></i>
                                                         </a>
                                                     </div>
                                                     <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                                        <form class="delete-form" action="{{ route('admin.projects.destroy', $project->id) }}" method="post" data-title="{{$project->title}}">
+                                                        <form class="delete-form" action="{{ route('admin.projects.destroy', $proj->id) }}" method="post" data-title="{{$proj->title}}">
                                                             @csrf
                                                             @method('delete')
 
