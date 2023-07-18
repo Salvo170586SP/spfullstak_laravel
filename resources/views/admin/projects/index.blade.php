@@ -32,13 +32,25 @@
                     <input class="block mr-2  text-sm text-gray-900 bg-gray-50 rounded border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" name="search">
                     <button class="font-bold text-white rounded my-5 p-2 bg-gray-500">Cerca</button>
                     <a href="{{ route('admin.projects.index') }}" class="font-bold text-white rounded my-5 p-2 bg-red-500 ms-2" type="submit">Reset</a>
-                 </form>
+                </form>
                 <div class="max-w-xxl dark:bg-gray-600 dark:text-white py-4 px-8 bg-white shadow-lg rounded-lg" style=" overflow: auto">
                     <div class="py-5">
                         @foreach($projects as $proj)
                         <div class="flex justify-between items-center py-3">
                             <div>
-                                <img class="rounded-md" width="90" src="{{ asset('storage/'. $proj->img_url) }}" alt="{{$proj->title }}">
+                                <form action="{{ route('admin.projects.updatePosition', $proj->id) }}" method="post" class=" flex items-center">
+                                    @csrf
+
+                                    <input value="{{ old('position',  $proj->position) }}" name="position" type="number" min="1" max="{{ count($projects) }}" style="width: 20%" class="block me-2 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <button class="font-bold text-white rounded my-5 p-2 bg-gray-500">Salva posizione</button>
+                                </form>
+                                @if($proj->img_url)
+                                <img class="rounded-md my-3" width="90" src="{{ asset('storage/'. $proj->img_url) }}" alt="{{$proj->title }}">
+                                @else
+                                <div class="rounded-md my-3 border border-gray-300 flex items-center justify-center" style="width: 100px; height: 100px">
+                                    <h4 class="dark:text-gray-400">NO IMAGE</h4>
+                                </div>
+                                @endif
                                 <div class="text-2mdmb-2 font-bold text-white">Nome: {{ $proj->title }}</div>
                                 <div class="text-2md mb-2 font-bold text-white">Url: {{ $proj->url }}</div>
                             </div>
@@ -101,7 +113,13 @@
                                                 </form>
                                             </td>
                                             <td class="py-3 px-6 text-left whitespace-nowrap">
-                                                <img class="rounded-md" width="90" src="{{ asset('storage/'. $proj->img_url) }}" alt="{{$proj->title }}">
+                                                @if($proj->img_url)
+                                                <img class="rounded-md my-3" width="90" src="{{ asset('storage/'. $proj->img_url) }}" alt="{{$proj->title }}">
+                                                @else
+                                                <div class="rounded-md my-3 border border-gray-300 flex items-center justify-center" style="width: 100px; height: 70px">
+                                                    <h4 class="dark:text-gray-400">NO IMAGE</h4>
+                                                </div>
+                                                @endif
                                             </td>
                                             <td class="py-3 px-6 text-left">
                                                 {{ $proj->title }}
