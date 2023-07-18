@@ -27,10 +27,12 @@
             </div>
 
             <div class="col block md:hidden my-10 mx-auto w-full">
-                <form action="{{ route('admin.projects.index') }}" method="get" class="flex items-center">
+                <form action="{{ route('admin.projects.index') }}" method="post" class="flex items-center">
+                    @csrf
                     <input class="block mr-2  text-sm text-gray-900 bg-gray-50 rounded border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" name="search">
                     <button class="font-bold text-white rounded my-5 p-2 bg-gray-500">Cerca</button>
-                </form>
+                    <a href="{{ route('admin.projects.index') }}" class="font-bold text-white rounded my-5 p-2 bg-red-500 ms-2" type="submit">Reset</a>
+                 </form>
                 <div class="max-w-xxl dark:bg-gray-600 dark:text-white py-4 px-8 bg-white shadow-lg rounded-lg" style=" overflow: auto">
                     <div class="py-5">
                         @foreach($projects as $proj)
@@ -72,8 +74,9 @@
                     <div class="min-w-screen  my-9 flex items-center justify-center  font-sans overflow-hidden">
                         <div class="w-full lg:w-5/6">
                             <form action="{{ route('admin.projects.index') }}" method="get" class="flex items-center">
-                                <input class="block mr-2  text-sm text-gray-900 bg-gray-50 rounded border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" name="search">
+                                <input id="search-input" class="block mr-2  text-sm text-gray-900 bg-gray-50 rounded border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" name="search">
                                 <button class="font-bold text-white rounded my-5 p-2 bg-gray-500">Cerca</button>
+                                <a href="{{ route('admin.projects.index') }}" class="font-bold text-white rounded my-5 p-2 bg-red-500 ms-2" type="submit">Reset</a>
                             </form>
                             <div class="shadow-lg rounded my-6">
                                 <table class="min-w-max w-full dark:bg-gray-700 dark:text-white-800 rounded-md overflow-hidden  table-auto">

@@ -17,9 +17,16 @@ class ProjectController extends Controller
     {
 
         $search = $request->input('search');
-        $projects = Project::where('title', 'like', "%$search%")->orderBy('position', 'ASC')->get();
+        //ricerca solo del titolo
+        /*  $projects = Project::where('title', 'like', "%$search%")->orderBy('position', 'ASC')->get(); */
 
+        //ricerca del titolo e dell'url
+        $projects = Project::where(function ($query) use ($search) {
+            $query->where('title', 'like', "%$search%")
+                ->orWhere('url', 'like', "%$search%");
+        })->orderBy('position', 'ASC')->get();
 
+ 
         return view('admin.projects.index', compact('projects'));
     }
 

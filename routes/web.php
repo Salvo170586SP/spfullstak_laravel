@@ -41,7 +41,7 @@ require __DIR__ . '/auth.php';
 Route::middleware('auth')->prefix('dashboard')->name('admin.')->group(function () {
     Route::resource('/biograpies', BiograpyController::class);
     Route::resource('/projects', ProjectController::class);
-    Route::post('/categories/updatePosition/{project}',  [ProjectController::class, 'updatePosition'])->name('projects.updatePosition');
+    Route::post('/projects/updatePosition/{project}',  [ProjectController::class, 'updatePosition'])->name('projects.updatePosition');
 });
 
 
