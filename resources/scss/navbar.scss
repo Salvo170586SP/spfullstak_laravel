@@ -1,24 +1,10 @@
-/* light-mode header */
-#navbarNav {
-  margin-right: 125px !important;
-}
-
-.light-header {
-  background-color: rgb(238, 238, 255) !important;
-  box-shadow: 0 0 15px -10px black;
-}
-
-.light-header a {
-  color: black !important;
-}
-
 /* select dark light */
 #checkbox {
   cursor: pointer;
   margin-left: 20px;
 }
-S
-.text-dark {
+
+ .text-dark {
   color: black;
 }
 
@@ -28,7 +14,7 @@ nav {
 }
 
 .active-nav {
-  background-color: #232730;
+  background-color: #232730eb;
   transition: 0.1s linear;
 }
 
@@ -36,32 +22,47 @@ nav {
   color: white;
 }
 
-.font-size {
+/* .font-size {
   font-size: 15px;
+} */
+
+#navbarNav .a-nav {
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  background-color: #484b50fc;
+  padding: 8px 17px;
+  margin: 0 10px;
+  border-radius: 20px;
+  transition: 0.1s linear;
+  box-shadow: 0 0 15px -10px black;
 }
 
-.a-nav {
-  font-size: smaller;
+#navbarNav ul {
+  display: flex;
+  justify-content: center;
+ }
+
+#navbarNav li {
+  margin: 10px 0;
+}
+
+#navbarNav .a-nav:hover {
+  transform: scale(1.1);
+  transition: 0.1s linear;
+}
+
+#navbarNav .nav-link:focus,
+.nav-link:hover {
   color: white;
 }
 
-.a-nav:hover {
- border-bottom: 2px solid gray;
+#navbarNav .a-nav-current {
+  color: rgb(255 255 255);
+  transform: scale(1.1);
+  background-color: #8b8888;
 }
 
-.nav-link:focus,
-.nav-link:hover {
-  color: grey;
-}
-
-.a-nav-current{
-  border-bottom: 2px solid gray;
-  color: grey;
-}
-
-#navbarNav {
-  margin-right: 250px;
-}
 
 .text-a,
 a {
@@ -83,3 +84,12 @@ a {
 .navbar-toggler-icon.black-icon {
   filter: invert(0);
 }
+
+#navbarNav .seguimi-btn {
+  padding: 10px 15px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid #d5dc97;
+  line-height: 15px;
+}
+
