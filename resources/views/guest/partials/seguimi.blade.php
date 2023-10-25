@@ -6,7 +6,7 @@
           <div class="card-follow d-flex align-items-center flex-wrap p-3 justify-content-center">
             <a href="https://github.com/Salvo170586SP" target="”_blank”">
               <figure>
-                <img src="images/logo.jpeg" width="150" class="img-fluid" alt="logo-github" />
+                <img src="images/logo.jpeg" width="70" class="img-fluid" alt="logo-github" />
               </figure>
             </a>
             <p>
