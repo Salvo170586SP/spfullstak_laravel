@@ -6,7 +6,18 @@
           <h2>Miei progetti pubblicati su GitHub</h2>
         </div>
         <div class="col-12 text-center">
-          <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden"
+
+          <div class="grid my-5">
+            <div class="box one" style="--img:url(../../../public/images/progetti/Screenshot7.png);" data-text="Clone Web App di Spotify"></div>
+            <div class="box two" style="--img:url(../../../public/images/progetti/Screenshot5.png);" data-text="Clone Dropbox"></div>
+            <div class="box three" style="--img:url(../../../public/images/progetti/Screenshot6.png);" data-text="Clone PlayStation"></div>
+            <div class="box four" style="--img:url(../../../public/images/progetti/Screenshot3.png);" data-text="Clone web App di WhatsApp Web"></div>
+            <div class="box five" style="--img:url(../../../public/images/progetti/Screenshot4.png);" data-text="Clone Discord"></div>
+            <div class="box six" style="--img:url(../../../public/images/progetti/Screenshot2.png);" data-text="Clone Netflix"></div>
+          </div>
+
+
+          {{-- <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden"
             style="border-radius: 30px">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper " style="
@@ -61,7 +72,7 @@
             <!-- If we need navigation buttons -->
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
-          </div>
+          </div> --}}
         </div>
 
       </div>
