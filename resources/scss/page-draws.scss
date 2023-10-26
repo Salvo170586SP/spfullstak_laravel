@@ -1,0 +1,48 @@
+#page-draws {
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    padding-top: 50px;
+    padding-bottom: 250px;
+    min-height: 100vh;
+}
+
+#page-draws.bg-draws-blue {
+    background: radial-gradient(#4c41cd, #000000);;
+    color: white;
+}
+
+
+.img-draw {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    margin: 2px;
+    position: relative;
+}
+
+.img-draw img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.img-draw:hover {
+    transform: scale(1.2);
+    box-shadow: black 0 0 10px -5px;
+    overflow: initial;
+    z-index: 25;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.img-draw:hover img {
+    border-radius: 5px;
+    box-shadow: black 0 0 20px -10px;
+}
+
+.z-i {
+    z-index: 1;
+}
