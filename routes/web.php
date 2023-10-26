@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\BiograpyController;
+use App\Http\Controllers\DrawController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Models\Biograpy;
+use App\Models\Draw;
 use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
@@ -42,6 +44,7 @@ Route::middleware('auth')->prefix('dashboard')->name('admin.')->group(function (
     Route::resource('/biograpies', BiograpyController::class);
     Route::resource('/projects', ProjectController::class);
     Route::post('/projects/updatePosition/{project}',  [ProjectController::class, 'updatePosition'])->name('projects.updatePosition');
+    Route::resource('/draws', DrawController::class);
 });
 
 
@@ -53,6 +56,11 @@ Route::get('/projects', function () {
     return view('guest.pages.projects.index', compact('projects'));
 })->name('guest.pages.projects.index');
 
+Route::get('/draws', function () {
+    $draws = Draw::orderBy('id', 'ASC')->get();
+    return view('guest.pages.draws.index', compact('draws'));
+})->name('guest.pages.draws.index');
+
 
 Route::get('/cvitae', function () {
     return view('guest.pages.cvitae.index');
@@ -63,10 +71,11 @@ Route::get('/bio', function () {
     return view('guest.pages.bio.index', compact('biograpies'));
 })->name('guest.pages.bio.index');
 
-Route::get('/naturando', function () {
+
+/* Route::get('/naturando', function () {
     return view('guest.pages.naturando.index');
 })->name('guest.pages.naturando.index');
 
 Route::get('/dev', function () {
     return view('guest.pages.dev.index');
-})->name('guest.pages.dev.index');
+})->name('guest.pages.dev.index'); */

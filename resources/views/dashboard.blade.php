@@ -15,6 +15,7 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <a class="font-bold text-white rounded my-5 p-2 bg-gray-500" href="{{ route('admin.biograpies.index') }}">Biografia</a>
                     <a class="font-bold text-white rounded my-5 p-2 bg-gray-500" href="{{ route('admin.projects.index') }}">Progetti</a>
+                    <a class="font-bold text-white rounded my-5 p-2 bg-gray-500" href="{{ route('admin.draws.index') }}">Disegni</a>
                 </div>
                 
             </div>
