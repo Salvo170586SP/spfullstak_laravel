@@ -48,7 +48,7 @@ nav {
 }
 
 #navbarNav .a-nav:hover {
-  transform: scale(1.1);
+  transform: scale(0.9);
   transition: 0.1s linear;
 }
 
@@ -59,7 +59,7 @@ nav {
 
 #navbarNav .a-nav-current {
   color: rgb(255 255 255);
-  transform: scale(1.1);
+  transform: scale(0.9);
   background-color: #8b8888;
 }
 

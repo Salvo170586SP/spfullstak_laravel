@@ -10,10 +10,10 @@
 }
 
 #page-draws.bg-draws-blue {
-    background: radial-gradient(#4c41cd, #000000);;
+    background: radial-gradient(#4c41cd, #000000);
+    ;
     color: white;
 }
-
 
 .img-draw {
     width: 300px;
@@ -43,6 +43,13 @@
     box-shadow: black 0 0 20px -10px;
 }
 
-.z-i {
-    z-index: 1;
+@media screen and (max-width: 768px) {
+    .img-draw {
+        height: auto;
+    }
+
+    .img-draw:hover {
+        transform: none;
+    }
+
 }
