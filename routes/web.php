@@ -70,7 +70,15 @@ Route::get('/cvitae', function () {
     $files = File::all();
     return view('guest.pages.cvitae.index', compact('files'));
 })->name('guest.pages.cvitae.index');
-/* Route::get('/cvitae/downloadFiles/{file}', [FileController::class, 'downloadFile'])->name('files.downloadFile'); */
+
+
+Route::get('/cvitae/downloadFiles/{file}', function (File $file) {
+    $filePath = public_path('storage/' . $file->url_file);
+    $ext = pathinfo($filePath, PATHINFO_EXTENSION);
+    $fileName = $file->title_file . '.' . $ext;
+
+    return response()->download($filePath, $fileName);
+})->name('downloadFileGuest');
 
 Route::get('/bio', function () {
     $biograpies = Biograpy::all();

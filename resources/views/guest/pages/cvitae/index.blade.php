@@ -97,7 +97,7 @@
             <div class="col-12 d-none col-md-4 d-md-flex d-flex align-items-center justify-content-center py-2">
                 <figure class="file-fig text-center">
                     <img src="{{ asset('/storage/' . $file->url_file) }}" alt="attestato" class="img-fluid file border" width="250" />
-                    <form action="{{ route('admin.files.downloadFile', $file->id) }}" method="get" class="download-btn">
+                    <form action="{{ route('downloadFileGuest', $file->id) }}" method="get" class="download-btn">
                         <button class="btn btn-secondary ms-3" title="scarica"><i class="fa fa-arrow-down"></i></button>
                     </form>
                     <h6 class="mt-2">{{ $file->title_file }}</h6>
