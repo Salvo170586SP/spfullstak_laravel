@@ -2,11 +2,13 @@
 
 use App\Http\Controllers\BiograpyController;
 use App\Http\Controllers\DrawController;
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Models\Biograpy;
 use App\Models\Draw;
+use App\Models\File;
 use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
@@ -45,6 +47,8 @@ Route::middleware('auth')->prefix('dashboard')->name('admin.')->group(function (
     Route::resource('/projects', ProjectController::class);
     Route::post('/projects/updatePosition/{project}',  [ProjectController::class, 'updatePosition'])->name('projects.updatePosition');
     Route::resource('/draws', DrawController::class);
+    Route::resource('/files', FileController::class);
+    Route::get('/cvitae/downloadFile/{file}', [FileController::class, 'downloadFile'])->name('files.downloadFile');
 });
 
 
@@ -63,8 +67,10 @@ Route::get('/draws', function () {
 
 
 Route::get('/cvitae', function () {
-    return view('guest.pages.cvitae.index');
+    $files = File::all();
+    return view('guest.pages.cvitae.index', compact('files'));
 })->name('guest.pages.cvitae.index');
+/* Route::get('/cvitae/downloadFiles/{file}', [FileController::class, 'downloadFile'])->name('files.downloadFile'); */
 
 Route::get('/bio', function () {
     $biograpies = Biograpy::all();
