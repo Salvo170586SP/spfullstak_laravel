@@ -106,7 +106,7 @@
             <div class="col-12 d-block col-md-12 d-md-none d-flex align-items-center justify-content-center py-2">
                 <figure class="file-fig">
                     <img src="{{ asset('/storage/' . $file->url_file) }}" class="img-fluid border img-cv" width="250" />
-                    <form action="{{ route('admin.files.downloadFile', $file->id) }}" method="get" class="download-btn">
+                    <form action="{{ route('downloadFileGuest', $file->id) }}" method="get" class="download-btn">
                         <button class="btn btn-secondary ms-3"><i class="fa fa-arrow-down"></i></button>
                     </form>
                 </figure>
