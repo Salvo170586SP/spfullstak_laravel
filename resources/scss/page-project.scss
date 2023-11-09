@@ -9,7 +9,8 @@
 }
 
 .bg-proj-dark {
-    background: radial-gradient(#594c66, #000000);
+    /* background-color: #171923; */
+    background-color: #16181D;
     color: white;
 }
 
@@ -26,22 +27,20 @@
     z-index: 5;
 }
 
-
 #item-img-proj .proj-img {
     width: 350px;
     height: 160px;
     overflow: hidden;
     margin: 0;
-    /*  border-radius: 20px; */
+    border-radius: 5px;
 }
-
 
 #item-img-proj .text-proj {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    background: darkslategrey;
-    border-radius: 30px;
+    background: black;
+    border-radius: 5px;
     padding: 5px 15px;
     font-weight: 700;
     font-size: small;
@@ -53,8 +52,6 @@
     width: 100%;
     object-fit: cover;
 }
-
-
 
 @media screen and (max-width: 768px) {
 

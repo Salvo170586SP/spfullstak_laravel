@@ -1,4 +1,4 @@
-<footer :class="{'light-footer' : show}">
+<footer>
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-sm-12 col-md-4 col-lg-6 d-flex align-items-center">

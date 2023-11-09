@@ -7,19 +7,18 @@
     }
 
     .bg-bio-dark {
-        background: radial-gradient(#594c66, #000000);
-        /* background: radial-gradient(#7d8eab, #0c0c0c); */
+        background-color:  #16181D;
+        /* background-color:  #171923; */
         color: white;
     }
-
 </style>
 @endsection
 @section('contain')
 <section id="bio" class="bg-bio-dark">
     <div class="container pt-5">
         <div class="row">
-            <div class="col-12 py-5">
-                <img width="350" class="m-3 shadow" src="{{ asset('images/salvo.jpg') }}" alt="salvo" style="border-radius: 5%; float: right">
+            <div class="col-12 py-5 z-i">
+                <img width="350" class="m-3 shadow" src="{{ asset('images/salvo.jpg') }}" alt="salvo" style="border-radius: 5px; float: right">
                 @foreach($biograpies as $bio)
                 {!! $bio->description !!}
                 @endforeach

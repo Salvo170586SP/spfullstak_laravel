@@ -1,28 +1,27 @@
 /* SEGUIMI */
 .dark-seguimi {
-    background: linear-gradient(to top, #232730 50%, white 0%);
-  }
+  background: linear-gradient(to top, #14161F 50%, black 0%);
+}
 
-  .light-seguimi {
-    background: linear-gradient(to top, #eaebfc 50%, white 0%);
-    /* background: linear-gradient(0deg, #8f90ff, transparent); */
-  }
+.card-follow {
+  width: 480px;
+  background-color: #171923;
+  border-radius: 5px;
+  border: solid 1px rgb(29, 42, 54);
+  margin: 0 10px;
+  color: white;
+}
 
-  .card-follow {
-    width: 480px;
-    background-color: white;
-    border-radius: 80px;
-    /* border-radius: 10px; */
-    box-shadow: black 0px 0px 13px -8px;
-    border: solid 1px lightgray;
-    margin: 0 10px;
-  }
+.card-follow p {
+  font-size: small;
+  margin: 0;
+}
 
-  .card-follow p{
-    font-size: small;
-    margin: 0;
-  }
-  .card-follow figure{
-    margin: 0;
-    margin-right: 20px;
-  }
+.card-follow figure {
+  margin: 0;
+  margin-right: 20px;
+}
+
+.logo-follow {
+  border-radius: 50%;
+}

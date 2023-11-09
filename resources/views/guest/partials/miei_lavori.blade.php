@@ -3,9 +3,9 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-12 text-center my-3">
-          <h2>Miei progetti pubblicati su GitHub</h2>
+          <h2>Progetti su GitHub</h2>
         </div>
-        <div class="col-12 text-center">
+        <div class="col-12 d-none col-md-12 d-md-block my-5  text-center">
 
           <div class="grid my-5">
             <div class="box one" style="--img:url(../../../public/images/progetti/Screenshot7.png);" data-text="Clone Web App di Spotify"></div>
@@ -74,10 +74,9 @@
             <div class="swiper-button-next"></div>
           </div> --}}
         </div>
-
       </div>
       <div class="col-12 text-center">
-          <a class="btn btn-outline-secondary fs-4 my-5" href="{{ route('guest.pages.projects.index') }}">Guarda tutti i miei lavori <i class="fa fa-arrow-right ms-3"></i></a>
+          <a class="btn-lavori  fs-4 my-5" href="{{ route('guest.pages.projects.index') }}">Guarda tutti i miei lavori <i class="fa fa-arrow-right ms-3"></i></a>
       </div>
     </div>
   </section>

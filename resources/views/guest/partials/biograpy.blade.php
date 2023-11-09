@@ -8,13 +8,9 @@
             Ho la passione dell'informatica, del design, e delle mie
             montagne. <br />
           </p>
-          <a class="btn text-light  btn-outline-dark  border-light" href="{{ url('/bio') }}">Scopri di più
+          <a class=" btn-bio " href="{{ url('/bio') }}">Scopri di più
           <i class="fa fa-arrow-right fa-fw ms-2"></i>
           </a>
-         {{--  <p>
-            Progetti per il futuro: <br />
-            <span class="fs-2">Non smettere mai di esplorare</span>
-          </p> --}}
         </div>
       </div>
     </div>

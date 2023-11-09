@@ -5,7 +5,7 @@
 </style>
 @endsection
 @section('contain')
-<section id="page-draws" class="bg-draws-blue">
+<section id="page-draws" class="bg-draws-dark">
     <div class="container h-100">
         <div class="row my-5">
             <div class="col-12 d-flex flex-column align-items-center justify-content-center ">
