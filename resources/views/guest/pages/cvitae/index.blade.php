@@ -2,17 +2,7 @@
 
 @section('additional-css')
 <style>
-    .bg-cv-dark {
-        background: radial-gradient(#594c66, #000000);
-        color: white;
-    }
-
-    .bg-cv-light {
-        background: radial-gradient(#eff0ff91, #eaebfc);
-        color: black;
-    }
-
-
+  
     .file-fig {
         position: relative;
         width: 250px;
@@ -40,14 +30,14 @@
 </style>
 @endsection
 @section('contain')
-<section id="cvitae" class="bg-cv-dark" :class="{'bg-cv-light' : show}">
+<section id="cvitae" class="bg-cv-dark">
     <div class="container">
-        <div class="row my-5">
-            <div class="col-12 text-center py-5">
-                <h2>Curriculum Vitae & certificati conseguiti</h2>
+        <div class="row mt-5">
+            <div class="col-12 text-center pb-5">
+                <h3>Curriculum Vitae & certificati conseguiti</h3>
             </div>
             <div class="col-12 col-md-4 p-3">
-                <h5>HTML CSS Bootstrap</h5>
+                <h6>HTML CSS Bootstrap</h6>
                 <p class="fs-6">
                     Ottime competenze in HTML, CSS e Bootstrap, adattando
                     agevolmente i vari layout in modo responsive a qualunque
@@ -57,7 +47,7 @@
             </div>
             <div class="col-12 col-md-4 p-3">
 
-                <h5>JS VueJS</h5>
+                <h6>JS VueJS</h6>
                 <p class="fs-6">
                     Con le basi in Javascript e il framework VueJS (con
                     quest'ultimo associandola alla tecnologia VueRouter) riesco a
@@ -70,7 +60,7 @@
             </div>
             <div class="col-12 col-md-4 p-3">
 
-                <h5>PHP LARAVEL MYSQL</h5>
+                <h6>PHP LARAVEL MYSQL</h6>
                 <p class="fs-6">
                     Ho buone conoscenze nel linguaggio php e l'ambiente lavorativo
                     Laravel, con cui poter creare un back-office utile alla

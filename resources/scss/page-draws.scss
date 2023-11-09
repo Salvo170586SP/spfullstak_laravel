@@ -9,9 +9,9 @@
     min-height: 100vh;
 }
 
-#page-draws.bg-draws-blue {
-    background: radial-gradient(#4c41cd, #000000);
-    ;
+#page-draws.bg-draws-dark {
+    background-color: #16181D;
+    /* background-color: #171923; */
     color: white;
 }
 
@@ -21,6 +21,7 @@
     overflow: hidden;
     margin: 2px;
     position: relative;
+    border-radius: 5px;
 }
 
 .img-draw img {

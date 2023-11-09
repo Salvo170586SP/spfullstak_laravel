@@ -1,7 +1,10 @@
-<header class="fixed-top">
+<header class="fixed-top" >
     <nav id="primary-header" class="navbar p-2 navbar-expand-lg d-flex">
-        <img width="50" src="{{ asset('images/icon/logo2.png') }}" alt="logo" />
-        <h6 class="text-light"  :class="{ 'text-dark' : show}">SPFULLSTAK.it</h6>
+        <a href="/">
+            <img width="50" src="{{ asset('images/icon/logo2.png') }}" alt="logo" />
+        </a>
+        <h6 class="text-light">Salvatore Pitanza WebDev</h6>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -15,7 +18,7 @@
                 @endif
 
                 <li class="nav-item">
-                    <a class="nav-link a-nav @if(url()->current() == url('/'))  a-nav-current  @endif" href="{{ url('/') }}">HOME</a>
+                    <a class="nav-link a-nav  @if(url()->current() == url('/'))  a-nav-current  @endif" href="{{ url('/') }}">HOME</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link a-nav @if(url()->current() == url('/bio'))  a-nav-current  @endif" href="{{ route('guest.pages.bio.index') }}">CHI SONO</a>
@@ -29,13 +32,6 @@
                 <li class="nav-item">
                     <a class="nav-link a-nav @if(url()->current() == url('/cvitae'))  a-nav-current  @endif" href="{{ route('guest.pages.cvitae.index') }}">CURRICULUM VITAE</a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a class="nav-link a-nav" href="{{ url('/naturando') }}">NATURANDO</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link a-nav" href="{{ url('/dev') }}">DEV</a>
-                </li> --}}
-
 
                 {{-- <li class="nav-item d-flex align-items-center">
                     <i @click="show = !show" id="checkbox" class="fa fa-moon text-light nav-link a-nav" :class="{'fa-sun text-dark' : show}"></i>

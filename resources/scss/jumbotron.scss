@@ -3,9 +3,10 @@
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     position: relative;
     z-index: 1;
-    padding: 50px 0;
+    padding-top: 200px;
     height: 100vh;
   }
   
@@ -16,16 +17,23 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.568);
+    background-color: rgba(0, 0, 0, 0.833)
+  }
+  
+  .title-jumbotron{
+    font-size: 4rem;
   }
   
   .z-i {
     z-index: 1;
   }
   
+  .follow-div{
+    margin-top: 200px;
+  }
+
   .arrow-icon {
-    margin-top: 20px;
-    animation-duration: 2s;
+    animation-duration: 0.8s;
     animation-iteration-count: infinite;
   }
   

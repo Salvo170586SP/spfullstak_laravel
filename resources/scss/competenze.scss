@@ -1,32 +1,27 @@
 /* COMPETENZE */
 #competenze {
-    height: 100vh;
-    padding: 50px 0;
-  }
+  height: 100vh;
+  padding: 50px 0;
+  position: relative;
+  z-index: 1;
+  color: white;
+  background-color: #16181D;
+  /* background-color: #171923; */
+}
 
-  .dark-competenze {
-    background: radial-gradient(#594c66, #000000);
-    color: white;
-  }
+p {
+  text-align: justify;
+}
 
-  .light-competenze {
-    background: radial-gradient(#eff0ff91, #eaebfc);
-    color: black;
-  }
+.fs {
+  font-size: 15px;
+}
 
-  p {
-    text-align: justify;
-  }
+.icon-code {
+  transition: 0.5s;
+  cursor: pointer;
+}
 
-  .fs {
-    font-size: 15px;
-  }
-
-  .icon-code {
-    transition: 0.5s;
-    cursor: pointer;
-  }
-
-  .icon-code:hover {
-    transform: scale(1.5);
-  }
+.icon-code:hover {
+  transform: scale(1.5);
+}

@@ -17,7 +17,7 @@
     @vite(['resources/scss/app.scss','resources/js/scrollnav.js','resources/js/imgprev.js','resources/js/arrowTop.js','resources/js/app.js'])
 </head>
 <body {{-- x-data="{show: false}" --}}>
-    <div id="home-page">
+    <div id="home-page" x-data="{ open: false }">
         @include('guest.partials.navbar')
         <main>
             @yield('contain')
@@ -26,7 +26,7 @@
     </div>
     @include('guest.partials.up-arrow')
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+ {{--    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper(".swiper", {
             // Optional parameters
@@ -49,6 +49,6 @@
             , }
         , });
 
-    </script>
+    </script> --}}
 </body>
 </html>
