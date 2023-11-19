@@ -1,4 +1,4 @@
-<header class="fixed-top" >
+<header class="fixed-top @if(url()->current() == url('/bio') || url()->current() == url('/projects') || url()->current() == url('/draws') || url()->current() == url('/cvitae') )  active-nav @endif">
     <nav id="primary-header" class="navbar p-2 navbar-expand-lg d-flex">
         <a href="/">
             <img width="50" src="{{ asset('images/icon/logo2.png') }}" alt="logo" />
@@ -21,7 +21,7 @@
                     <a class="nav-link a-nav  @if(url()->current() == url('/'))  a-nav-current  @endif" href="{{ url('/') }}">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link a-nav @if(url()->current() == url('/bio'))  a-nav-current  @endif" href="{{ route('guest.pages.bio.index') }}">CHI SONO</a>
+                    <a class="nav-link a-nav @if(url()->current() == url('/bio'))  a-nav-current @endif" href="{{ route('guest.pages.bio.index') }}">CHI SONO</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link a-nav @if(url()->current() == url('/projects'))  a-nav-current  @endif" href="{{ route('guest.pages.projects.index') }}">PROGETTI</a>
